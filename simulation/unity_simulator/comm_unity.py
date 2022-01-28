@@ -102,6 +102,18 @@ class UnityCommunication(object):
                 {'id': str(time.time()), 'action': 'idle'}, repeat=True)
         return response['success']
     
+    def set_time(self, hour, minute, sec):
+        response = self.post_command(
+            {'id': str(time.time()),
+             'action': 'set_time',
+             'stringParams':[json.dumps({
+                'hour': hour,
+                'minute': minute,
+                'second': sec
+                })]
+            })
+        return response['success']  
+
     def get_visible_objects(self, camera_index):
         """
         Obtain visible objects accoding to a given camera
