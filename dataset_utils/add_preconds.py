@@ -4,7 +4,7 @@ import glob
 import numpy as np
 import os
 import json
-from augmentation_utils import *
+from .augmentation_utils import *
 
 dump_preconds = False
 rooms = [x.lower() for x in [
